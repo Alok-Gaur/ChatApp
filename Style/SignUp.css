@@ -1,22 +1,24 @@
+body {
+    background-color: rgb(221, 216, 216);
+}
+
 input {
     display: block;
+    width: 200px;
+    height: 25px;
+    border-radius: 4px;
+    border: 1px solid rgb(199, 197, 197);
+    margin-top: 10px;
 }
 
 .container {
-    height: 500px;
-    width: 500px;
-    position: fixed;
-    align-content: center;
-    top: 100px;
-    left: 300px;
-    right: 300px;
-    bottom: 100px;
-}
-
-.slider-container {
-    position: fixed;
-    top: 250px;
-    left: 300px;
-    right: 300px;
-    bottom: 100px;
+    background-color: white;
+    border: none;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    transform: translate(-23%, -20%);
+    padding: 10px;
+    box-shadow: -3px -2px 10px rgba(107, 103, 103, 0.6);
+    overflow: hidden;
 }
