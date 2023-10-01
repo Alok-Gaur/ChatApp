@@ -5,39 +5,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Form</title>
+    <link rel="stylesheet" href="../Style/SignUp.css">
 </head>
 
 <body>
     <div class="container">
-        <div class="form-container signin-container">
-            <form action="">
+        <div class="form-container signin-container" style="display: grid; grid-template-columns: 1fr 1fr;">
+            <form action="" class="form-sign-up">
                 <h1>Create Account</h1>
-                <input type="text" class="user-name" placeholder="Name">
-                <input type="email" class="user-email" placeholder="Email">
-                <input type="password" class="user-password" placeholder="Password">
-                <button class="button-sign-up">SIGNUP</button>
+                <input type="text" class="user-name" placeholder="Name" required>
+                <input type="email" class="user-email" placeholder="Email" required>
+                <input type="password" class="user-password" placeholder="Password" required>
+                <button class="button-sign-up">SignUp</button>
             </form>
 
-            <form action="">
-                <h1>Welcome Back!</h1>
-                <p class="message">To keep connected with your friends please login with your personal info</p>
-                <button class="buttonn-sign-in">SIGNIN</button>
+            <form action="" class="form-sign-in">
+                <h1>Sign In</h1>
+                <input type="email" class="user-email" placeholder="Email" required>
+                <input type="password" class="user-password" placeholder="Password" required>
+                <button class="button-sign-in">SignIn</button>
             </form>
+
         </div>
 
-        <div class="form-container signup-container">
-            <form action="">
-                <h1>Sign In</h1>
-                <input type="email" class="user-email" placeholder="Email">
-                <input type="password" class="user-password" placeholder="Password">
-                <button class="button-sign-in">SIGNIN</button>
-            </form>
+        <div class="slider-container" style="display: grid; grid-template-columns: 1fr 1fr;">
 
-            <form action="">
+            <form action="" class="slider-left">
                 <h1>Hello Friend!</h1>
                 <p class="message">To get started with your friends start your journey with us </p>
-                <button class="buttonn-sign-in">SIGNIN</button>
+                <button class="buttonn-sign-in">SignUp</button>
             </form>
+
+            <form action="" class="slider-right">
+                <h1>Welcome Back!</h1>
+                <p class="message">To keep connected with your friends please login with your personal info</p>
+                <button class="buttonn-sign-in">SignIn</button>
+            </form>
+
         </div>
     </div>
 </body>
