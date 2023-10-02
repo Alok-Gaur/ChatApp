@@ -1,0 +1,23 @@
+.contact-section {
+    position: fixed;
+    background-color: lightsalmon;
+    width: 300px;
+    overflow: hidden scroll;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+}
+
+
+
+
+.message-section {
+    position: fixed;
+    height: 98%;
+    left: 315px;
+    right: 0px;
+
+    overflow: hidden scroll;
+}
