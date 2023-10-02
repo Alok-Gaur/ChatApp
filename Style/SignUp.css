@@ -122,6 +122,7 @@ input {
 
 .container.right-panel-active .sign-in-container {
 	transform: translateX(100%);
+	z-index: 1;
 }
 
 .sign-up-container {
