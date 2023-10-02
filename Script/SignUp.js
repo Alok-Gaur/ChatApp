@@ -12,10 +12,10 @@
 
 function addLeftPanel() {
 	const container = document.getElementById('container');
-	container.classList.add("left-panel-active");
+	container.classList.add("right-panel-active");
 }
 
 function removeLeftPanel() {
 	const container = document.getElementById('container');
-	container.classList.remove("left-panel-active");
+	container.classList.remove("right-panel-active");
 }
