@@ -155,14 +155,17 @@
 
 }
 
+
 .left {
     float: left;
     clear: both;
+    border-top-left-radius: 0px;
 }
 
 .right {
     float: right;
     clear: both;
+    border-top-right-radius: 0px;
 }
 
 /* footer section css */
