@@ -1,14 +1,12 @@
-dp {
+.dp {
   margin : auto ;
   width:40px ;
+  height : 40px;
   padding-top : 9px;
 }
 
-.s,.m{
-  width: 40px ;
-  margin : 10px;
-}
 .header {
+  position : fixed ;
   display : flex;
   width:40%;
   align-items : center;
@@ -18,4 +16,7 @@ dp {
   background: #ededed;
   padding: 0 15px;
   overflow : hidden ;
+}
+i{
+  margin-left: 30px ;
 }
