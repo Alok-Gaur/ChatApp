@@ -3,24 +3,16 @@
   padding-top : 9px;
   margin : 20px;  
 }
-.d {
-  width : 30 px ;
-}
-.d{
-  margin-right :20px;
-}
-.i{
+
+.image{
   display : flex;
   float: left ;
   overflow: hidden;
   width : 60% ;
 }
 
-
-.d,.f{
-  width: 20px;
-}
 .chat-header {
+  position:fixed;
   display : flex;
   width:40%;
   align-items : center;
@@ -30,4 +22,8 @@
   background: #ededed;
   padding: 0 15px;
   overflow : hidden ;
+}
+
+i{
+  margin-left: 20px;
 }
