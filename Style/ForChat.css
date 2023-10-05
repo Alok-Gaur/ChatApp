@@ -1,46 +1,215 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
-.contact-section {
-    position: fixed;
-    background-color: lightsalmon;
-    width: 300px;
-    overflow: hidden scroll;
-    top: 0px;
-    left: 0px;
-    bottom: 0px;
-    padding-bottom: 10px;
-    padding-left: 5px;
+
+.main-container {
+    display: grid;
+    grid-template-columns: auto 3fr;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden hidden;
 }
+
+
+.contact-section {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    background-color: lightsalmon;
+    height: 98vh;
+    min-width: 30vw;
+    padding-bottom: 10px;
+}
+
+/* User Profile Header */
+.dp {
+    margin: auto;
+    width: 30px;
+    height: 30px;
+    padding-top: 9px;
+}
+
+.contact-head {
+    /* position: fixed; */
+    display: flex;
+    width: 27%;
+    min-width: 30vw;
+    align-items: center;
+    height: 7vh;
+    justify-content: space-between;
+    flex-direction: row;
+    background: #ededed;
+    padding: 0 10px;
+    overflow: hidden;
+}
+
+
+
+
+
+.container-search {
+    text-align: center;
+    border-bottom: 1px solid red;
+}
+
+.search-box {
+    font-size: 13px;
+    padding: 4px 6px;
+    width: 80%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+/* contact list section start here where contact shown */
+.contact-list {
+    height: 83.5vh;
+    overflow: hidden scroll;
+}
+
+.contact {
+    display: grid;
+    grid-template-columns: 45px 1fr 39px;
+    border-bottom: 1px solid red;
+    padding: 5px 0px;
+}
+
+.contact-img {
+    width: 33px;
+    height: 33px;
+    padding: 3px 5px;
+}
+
+.contact-profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 25px;
+    background: white;
+}
+
+.detail {
+    margin: 3px;
+    font-size: 16px;
+}
+
+.contact-message {
+    font-size: 12px;
+    color: rgb(92, 89, 89);
+}
+
+.message-time {
+    font-size: 10px;
+    color: rgb(92, 89, 89);
+}
+
+/* contact list end here */
 
 
 
 
 .message-section {
-    position: fixed;
-    height: 98%;
-    left: 315px;
-    right: 0px;
+    width: 100%;
+    height: 100%;
+}
 
-    overflow: hidden scroll;
+.head {
+    background-color: lightblue;
+    height: 7vh;
+    max-width: 1202px;
+    border: 1px solid black;
 }
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24
+
+.psn-img {
+    height: 6vh;
+    width: 6vh;
+    border-radius: 50%;
+    border: 1px solid black;
+    margin-top: 4px;
+    margin-left: 10px;
+
 }
-/* footer section css */
-.foot{
+
+.name {
+    position: relative;
+    bottom: 2vh;
+    margin-left: 20px;
+    font-size: 4vh;
+}
+
+
+.msg-container {
     background-color: aqua;
-    
-
-    
+    height: 84.5vh;
+    max-width: 1202px;
+    border: 1px solid black;
+    overflow-y: auto;
 }
-.send-btn{
+
+.message {
+    background-color: grey;
+    width: 24%;
+    padding: 10px;
+    margin: 17px 12px;
+    border: 2px solid black;
+    border-radius: 10px;
+
+}
+
+.left {
+    float: left;
+    clear: both;
+}
+
+.right {
+    float: right;
+    clear: both;
+}
+
+/* footer section css */
+.foot {
+    background-color: aquamarine;
+    border: 2px solid black;
+    max-width: 100vw;
+    height: 7vh;
+
+}
+
+.txt-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.text-box {
+    width: 100%;
+    height: 5vh;
+    margin-top: 6px;
+    border: 1px solid black;
+    border-radius: 13px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+
+.send-btn {
+    margin-top: 5px;
     margin-left: 12px;
-    border: none;
+    border: 1px solid transparent;
     background-color: transparent;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+
+}
+
+::placeholder {
+    padding-left: 5px;
+    font-size: 2vh;
+}
+
+.send-img {
+    height: 33px;
+    width: 33px;
 }
