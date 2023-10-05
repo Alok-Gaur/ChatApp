@@ -30,7 +30,6 @@
 }
 
 .contact-head {
-    /* position: fixed; */
     display: flex;
     width: 27%;
     min-width: 30vw;
@@ -192,6 +191,7 @@
     margin-bottom: 5px;
 }
 
+
 .send-btn {
     margin-top: 5px;
     margin-left: 12px;
@@ -201,7 +201,6 @@
     height: 40px;
     width: 40px;
     cursor: pointer;
-
 }
 
 ::placeholder {
