@@ -37,7 +37,7 @@
     height: 7vh;
     justify-content: space-between;
     flex-direction: row;
-    background: #ededed;
+    background: linear-gradient(to bottom left, rgb(119, 77, 128), rgb(119, 77, 128), white);
     padding: 0 10px;
     overflow: hidden;
 }
@@ -113,7 +113,7 @@
 }
 
 .head {
-    background-color: lightblue;
+    background: linear-gradient(to bottom left, rgb(119, 77, 128), rgb(119, 77, 128), white);
     height: 7vh;
     max-width: 1202px;
     border: 1px solid black;
