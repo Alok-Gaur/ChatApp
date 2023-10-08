@@ -57,12 +57,13 @@
     width: 80%;
     margin-bottom: 10px;
     margin-top: 10px;
+    border-radius: 13px;
 }
 
 /* contact list section start here where contact shown */
 .contact-list {
     height: 83.5vh;
-    overflow: hidden scroll;
+    overflow-y: auto;
 }
 
 .contact {
@@ -85,6 +86,12 @@
     object-position: center;
     border-radius: 25px;
     background: white;
+}
+.icons{
+    cursor: pointer;
+}
+p{
+    cursor: pointer;
 }
 
 .detail {
@@ -134,6 +141,7 @@
     bottom: 2vh;
     margin-left: 20px;
     font-size: 4vh;
+    cursor: default;
 }
 
 
