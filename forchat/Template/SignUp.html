@@ -12,27 +12,38 @@
 </head>
 
 <body>
+    {% if messages %}
+    {% for message in messages %}
+    <h3>{{message}}</h3>
+    {% endfor %}
+    {% endif %}
     <div class="container" id="main">
+
         <div class="form-container sign-up-container">
             <form action="" method="post">
+                {%csrf_token%}
                 <h1 class="su">Create Account</h1>
 
 
-                <input type="text" name="txt" placeholder="Name" required="">
+                <input type="text" name="username" placeholder="Name" required="">
                 <input type="email" name="email" placeholder="Email" required="">
                 <input type="password" name="pswd" placeholder="Password" required="">
+                <input type="password2" name="pswd2" placeholder="Re-Enter Password" required>
                 <button class="bsu">Sign Up</button>
+                <input type="hidden" name="form_type" value="signup">
             </form>
         </div>
         <div class="form-container sign-in-container">
             <form action="" method="post">
+                {%csrf_token%}
                 <h1 class="head">Sign in</h1>
 
 
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" />
+                <input type="email" name="email" placeholder="Email" />
+                <input type="password" name="pswd" placeholder="Password" />
                 <a href="#">Forgot your password?</a>
                 <button>Sign In</button>
+                <input type="hidden" name="form_type" value="signin">
             </form>
         </div>
         <div class="overlay-container">
