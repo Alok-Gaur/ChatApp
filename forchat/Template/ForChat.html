@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{% static 'style/ForChat.css' %}">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -70,9 +71,9 @@
             </div>
 
             <div class="foot">
-                <form action="" class="txt-box">
+                <form action="" class="txt-box" id="sent-form">
                     {% csrf_token %}
-                    <input class="text-box" type="text" placeholder="Message">
+                    <input class="text-box input-message" type="text" placeholder="Message">
                     <button class="send-btn"><img class="send-img" src="{% static 'demo_img/send.png' %}"
                             alt=""></button>
                 </form>
@@ -81,6 +82,7 @@
         </div>
     </div>
 
+    <script src="{% static 'script/ForChat.js' %}"></script>
 
 </body>
 

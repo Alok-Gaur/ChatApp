@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'daphne',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -71,7 +72,8 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'forchat.wsgi.application'
+# WSGI_APPLICATION = 'forchat.wsgi.application'
+ASGI_APPLICATION = 'forchat.asgi.application'
 
 
 # Database
