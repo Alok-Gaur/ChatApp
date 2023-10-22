@@ -21,16 +21,16 @@ def userauth(request):
                     request, f'Username {username} is already used!')
             elif User.objects.filter(email=email):
                 messages.warning(request, "Account Already Exist!")
-                return redirect("userauth")
+                # return redirect("userauth")
             elif pswd != pswd2:
                 messages.warning(request, "Password Not Match")
-                return redirect("userauth")
+                # return redirect("userauth")
             else:
                 user = User.objects.create_user(
                     username=username, email=email, password=pswd)
                 user.save()
                 messages.success(request, "Account Created!")
-                return redirect("userauth")
+                # return redirect("userauth")
 
         # elif request.POST.get("form_type") == 'signin':
         else:
@@ -51,8 +51,8 @@ def userauth(request):
             if user is not None:
                 form = login(request, user)
                 print(form)
-                messages.success(request, f'Welcome {user.username.title()}!')
-                return redirect(request, 'messages')
+                # messages.success(request, f'Welcome {user.username.title()}!')
+                return redirect('message/')
             elif User.objects.filter(Q(email=nmauth) | Q(username=nmauth)):
                 messages.info(request, "Incorrect Password!!")
             else:

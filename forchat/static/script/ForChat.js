@@ -1,7 +1,7 @@
 let messageContainer = $(".msg-container");
 let inputMessage = $('.input-message');
 const sentForm = $('#sent-form');
-var sc = new WebSocket("ws://127.0.0.1:8000/ac/message");
+var sc = new WebSocket("ws://127.0.0.1:8000/message");
 
 // console.log(message);
 sc.onopen = (e) => {
