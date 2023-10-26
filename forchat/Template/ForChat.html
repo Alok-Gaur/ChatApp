@@ -14,13 +14,18 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
-<body>
+<body style="margin: 300px">
+    {% if user.is_authenticated %}
+    <input type="hidden" value="{{user.id}}" id="logged-in-user">
+    <!-- <p>{{user.id}}</p> -->
+    {% endif %}
     <div class="main-container">
         <div class="contact-section">
             <!--Header Section Where profile photo appear-->
             <div class="head contact-head">
                 <div class=user-img>
                     <img class="dp" src=" https://www.codewithfaraz.com/InstaPic.png" alt="guest user" />
+                    <p style="display: inline;">{{user.username}}</p>
                 </div>
                 <div class="icons">
                     <a class="material-symbols-outlined" aria-hidden="true">mail</a>
@@ -37,13 +42,18 @@
                 <!--Contact list is show in this container-->
                 <div class="contact-list">
                     <!--Here start contacts and messages-->
-                    <div class="contact">
+                    {% for thread in Threads %}
+                    <div class="contact {% if forloop.first %}active{% endif %}" chat-id="chat_{{thread.id}}">
                         <div class="contact-img">
                             <img src="{% static 'demo_img/person.png' %}" alt="profile_img" class="contact-profile-img">
                         </div>
                         <div class="detail">
                             <div class="contact-name">
-                                <p>Alok Gaur</p>
+                                {% if thread.first_person == user %}
+                                <p>{{thread.second_person.username}}</p>
+                                {% else %}
+                                <p>{{thread.first_person.username}}</p>
+                                {% endif %}
                             </div>
                             <div class="contact-message">
                                 <p>Hello how are you bro!</p>
@@ -53,35 +63,56 @@
                             <p>03:40 pm</p>
                         </div>
                     </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
         <!--Contact Section End Here!-->
 
+        <div class="message-section-container" style="position: relative;">
+            {% for thread in Threads %}
+            <!--Message Section Start Here Where Messeges Were Send and Displayed-->
+            <div class="message-section {% if forloop.first %}hide is_active{% else %}hide{% endif %}"
+                style="position: absolute;" chat-id="chat_{{ thread.id }}" other-user-id="
+            {% if thread.first_person == user %}
+                {{ thread.second_person.id }}
+            {% else %}
+                {{ thread.first_person.id }}
+            {% endif %}
+        ">
+                <div class="head"><img class="psn-img" src="{% static 'demo_img/person.png' %}" alt="">
+                    <span class="name">
+                        {% if thread.first_person == user %}
+                        {{ thread.second_person.username }}
+                        {% else %}
+                        {{ thread.first_person.username }}
+                        {% endif %}
+                    </span>
+                </div>
 
-        <!--Message Section Start Here Where Messeges Were Send and Displayed-->
-        <div class="message-section">
-            <div class="head"><img class="psn-img" src="{% static 'demo_img/person.png' %}" alt="">
-                <span class="name">lorem</span>
+                <div class="msg-container">
+                    {% for chat in thread.chatmessage_thread.all %}
+                    {% if chat.user == user %}
+                    <div class="message right">{{chat.message}}</div>
+                    {% else %}
+                    <div class="message left">{{chat.message}}</div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+
+                <div class="foot">
+                    <form action="" class="txt-box" id="sent-form">
+                        {% csrf_token %}
+                        <input class="text-box input-message" type="text" placeholder="Message">
+                        <button class="send-btn"><img class="send-img" src="{% static 'demo_img/send.png' %}"
+                                alt=""></button>
+                    </form>
+
+                </div>
             </div>
-
-            <div class="msg-container">
-                <div class="message right">hi</div>
-                <div class="message left">hello</div>
-            </div>
-
-            <div class="foot">
-                <form action="" class="txt-box" id="sent-form">
-                    {% csrf_token %}
-                    <input class="text-box input-message" type="text" placeholder="Message">
-                    <button class="send-btn"><img class="send-img" src="{% static 'demo_img/send.png' %}"
-                            alt=""></button>
-                </form>
-
-            </div>
+            {% endfor %}
         </div>
     </div>
-
     <script src="{% static 'script/ForChat.js' %}"></script>
 
 </body>
