@@ -120,19 +120,14 @@ p {
     width: 100%;
 }
 
-/* experiment code */
-
-
-.message-section.hide {
-    z-index: 0;
-}
 
 .messagee-section.hide.active {
     z-index: 100;
 }
 
 
-/* experiment code end here
+
+
 
 .head {
     background: linear-gradient(to bottom left, rgb(119, 77, 128), rgb(119, 77, 128), white);
