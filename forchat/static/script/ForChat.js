@@ -81,13 +81,13 @@ $('.contact').on('click', function () {
 })
 
 function get_active_other_user_id() {
-    let other_user_id = $('.message-section.is_active').attr('other-user-id')
+    let other_user_id = $('.message-section.hide.is_active').attr('other-user-id')
     other_user_id = $.trim(other_user_id)
     return other_user_id
 }
 
 function get_active_thread_id() {
-    let chat_id = $('.message-section.is_active').attr('chat-id');
+    let chat_id = $('.message-section.hide.is_active').attr('chat-id');
     let thread_id = chat_id.replace('chat_', '');
     return thread_id
 }

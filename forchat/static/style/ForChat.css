@@ -23,10 +23,10 @@
 
 /* User Profile Header */
 .dp {
-    margin: auto;
-    width: 30px;
-    height: 30px;
-    padding-top: 9px;
+    margin: -2;
+    width: 35px;
+    height: 35px;
+    padding-top: 3px;
 }
 
 .contact-head {
@@ -114,14 +114,14 @@ p {
 /* contact list end here */
 
 
-
+.message-section-container,
 .message-section {
     height: 100%;
     width: 100%;
 }
 
 
-.messagee-section.hide.active {
+.message-section.hide.is_active {
     z-index: 100;
 }
 
@@ -131,14 +131,14 @@ p {
 
 .head {
     background: linear-gradient(to bottom left, rgb(119, 77, 128), rgb(119, 77, 128), white);
-    height: 7vh;
+    height: 48px;
     max-width: 1202px;
     border: 1px solid black;
 }
 
 .psn-img {
-    height: 6vh;
-    width: 6vh;
+    height: 35px;
+    width: 35px;
     border-radius: 50%;
     border: 1px solid black;
     margin-top: 4px;
@@ -148,9 +148,9 @@ p {
 
 .name {
     position: relative;
-    bottom: 2vh;
-    margin-left: 20px;
-    font-size: 4vh;
+    bottom: 9px;
+    margin-left: 8px;
+    font-size: 25px;
     cursor: default;
 }
 
@@ -158,6 +158,7 @@ p {
 .msg-container {
     background-color: aqua;
     height: 84.5vh;
+    min-height: 300px;
     max-width: 1202px;
     border: 1px solid black;
     overflow-y: auto;
@@ -166,6 +167,8 @@ p {
 .message {
     background-color: grey;
     width: 24%;
+    inline-size: 24%;
+    overflow-wrap: break-word;
     padding: 10px;
     margin: 17px 12px;
     border: 2px solid black;
@@ -188,10 +191,13 @@ p {
 
 /* footer section css */
 .foot {
+    position: sticky;
     background-color: aquamarine;
     border: 2px solid black;
     max-width: 100vw;
-    height: 7vh;
+    height: 49px;
+    margin-top: 92vh;
+    z-index: 300;
 
 }
 

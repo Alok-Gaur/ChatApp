@@ -3,6 +3,7 @@ import json
 from channels.db import database_sync_to_async
 from channels.auth import get_user_model
 from .models import Thread, ChatMessage
+import datetime
 # Here making Async Class
 
 User = get_user_model()
@@ -47,6 +48,8 @@ class AsyncClass(AsyncConsumer):
             print("Error:: send to user incorrect!")
         if not thread_obj:
             print("Error:: Thread id is incorrect!")
+
+        await self.create_chat_message(thread_obj, sent_by_user, msg)
 
         other_user_chat_room = f"user_chatroom_{send_to_id}"
         self_user = self.scope['user']  # this is current logged in user
@@ -102,4 +105,5 @@ class AsyncClass(AsyncConsumer):
 
     @database_sync_to_async
     def create_chat_message(self, thread, user, msg):
-        ChatMessage.objects.create(thread=thread, user=user, message=msg)
+        ChatMessage.objects.create(
+            thread=thread, user=user, message=msg)
