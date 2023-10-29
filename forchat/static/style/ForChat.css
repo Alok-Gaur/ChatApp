@@ -15,13 +15,23 @@
 .contact-section {
     display: grid;
     grid-template-rows: auto 1fr;
-    background-color: lightsalmon;
+    background-color: #f5d6ff;
     height: 98vh;
     min-width: 30vw;
     padding-bottom: 10px;
 }
 
 /* User Profile Header */
+.contact-head {
+    display: flex;
+    width: 27%;
+    min-width: 30vw;
+    align-items: center;
+    flex-direction: row;
+    padding: 0 10px;
+    overflow: hidden;
+}
+
 .dp {
     margin: -2;
     width: 35px;
@@ -29,22 +39,34 @@
     padding-top: 3px;
 }
 
-.contact-head {
-    display: flex;
-    width: 27%;
-    min-width: 30vw;
-    align-items: center;
-    height: 7vh;
-    justify-content: space-between;
-    flex-direction: row;
-    background: linear-gradient(to bottom left, rgb(119, 77, 128), rgb(119, 77, 128), white);
-    padding: 0 10px;
-    overflow: hidden;
+.username {
+    margin-left: 5px;
+    font-size: 25px;
+    margin-bottom: 5px;
 }
 
+.logout-btn-container {
+    margin-left: auto;
+}
 
+.logout-btn {
+    border: 1px solid #f7e0ff;
+    background-color: #c26eff;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: opacity 0.2s, color 0.2s, background-color 0.2s;
+}
 
+.logout-btn:hover {
+    opacity: 0.7;
+}
 
+.logout-btn:active {
+    background-color: white;
+    color: #c26eff;
+}
 
 .container-search {
     text-align: center;
@@ -53,11 +75,11 @@
 
 .search-box {
     font-size: 13px;
-    padding: 4px 6px;
+    padding: 9px 17px;
     width: 80%;
     margin-bottom: 10px;
     margin-top: 10px;
-    border-radius: 13px;
+    border-radius: 19px;
 }
 
 /* contact list section start here where contact shown */
@@ -68,8 +90,9 @@
 
 .contact {
     display: grid;
+    background-color: #c26eff;
     grid-template-columns: 45px 1fr 39px;
-    border-bottom: 1px solid red;
+    border-bottom: 1px solid black;
     padding: 5px 0px;
 }
 
@@ -88,9 +111,6 @@
     background: white;
 }
 
-.icons {
-    cursor: pointer;
-}
 
 p {
     cursor: pointer;
@@ -130,7 +150,7 @@ p {
 
 
 .head {
-    background: linear-gradient(to bottom left, rgb(119, 77, 128), rgb(119, 77, 128), white);
+    background: rgb(178, 115, 192);
     height: 48px;
     max-width: 1202px;
     border: 1px solid black;
@@ -156,22 +176,23 @@ p {
 
 
 .msg-container {
-    background-color: aqua;
+    background-color: #f7e0ff;
     height: 84.5vh;
     min-height: 300px;
     max-width: 1202px;
     border: 1px solid black;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .message {
-    background-color: grey;
-    width: 24%;
-    inline-size: 24%;
+    background-color: rgba(119, 77, 128, 0.5);
+    width: 28%;
+    inline-size: 28%;
     overflow-wrap: break-word;
     padding: 10px;
     margin: 17px 12px;
-    border: 2px solid black;
+    border: 1px solid rgba(119, 77, 128, 0.5);
     border-radius: 10px;
 
 }
@@ -192,10 +213,10 @@ p {
 /* footer section css */
 .foot {
     position: sticky;
-    background-color: aquamarine;
-    border: 2px solid black;
+    background-color: #b875ff;
+    border: 1px solid black;
     max-width: 100vw;
-    height: 49px;
+    height: 51px;
     margin-top: 92vh;
     z-index: 300;
 
@@ -210,12 +231,13 @@ p {
 
 .text-box {
     width: 100%;
-    height: 5vh;
+    height: 35px;
+    padding-left: 20px;
     margin-top: 6px;
     border: 1px solid black;
-    border-radius: 13px;
+    border-radius: 19px;
     margin-left: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
 }
 
 
@@ -231,8 +253,7 @@ p {
 }
 
 ::placeholder {
-    padding-left: 5px;
-    font-size: 2vh;
+    font-size: 14px;
 }
 
 .send-img {

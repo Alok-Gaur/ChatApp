@@ -7,7 +7,7 @@
 }
 
 body {
-	background: #f6f5f7;
+	background: #f5d6ff;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -27,10 +27,12 @@ h1 {
 	font-weight: bold;
 	margin: 0;
 }
-.su{
+
+.su {
 	padding: 0 0 30px;
 }
-.bsu{
+
+.bsu {
 	margin-top: 30px;
 }
 
@@ -59,8 +61,8 @@ a {
 
 button {
 	border-radius: 20px;
-	border: 1px solid #FF4B2B;
-	background-color: #FF4B2B;
+	border: 1px solid #c26eff;
+	background-color: #c26eff;
 	color: #FFFFFF;
 	font-size: 12px;
 	font-weight: bold;
@@ -191,9 +193,9 @@ input {
 }
 
 .overlay {
-	background: #FF416C;
-	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
-	background: linear-gradient(to right, #FF4B2B, #FF416C);
+	background: #c26eff;
+	background: -webkit-linear-gradient(to right, #9d4aaf, #c26eff);
+	background: linear-gradient(to right, #c26eff, #9d4aaf);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;
@@ -210,7 +212,8 @@ input {
 	transform: translateX(50%);
 }
 
-.overlay-left, .overlay-right {
+.overlay-left,
+.overlay-right {
 	position: absolute;
 	display: flex;
 	align-items: center;

@@ -24,12 +24,15 @@
             <!--Header Section Where profile photo appear-->
             <div class="head contact-head">
                 <div class=user-img>
-                    <img class="dp" src=" https://www.codewithfaraz.com/InstaPic.png" alt="guest user" />
-                    <p style="display: inline;">{{user.username}}</p>
+                    <img class="dp" src=" https://www.codewithfaraz.com/InstaPic.png" alt="{{ user.username }}" />
+                    <!-- <p class="username" style="display: inline;">{{user.username}}</p> -->
                 </div>
-                <div class="icons">
-                    <a class="material-symbols-outlined" aria-hidden="true">mail</a>
-                    <a class="material-symbols-outlined" aria-hidden="true">more_vert</a>
+                <div class="username">{{user.username}}</div>
+                <div class="logout-btn-container">
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        <button class="logout-btn" type="submit">Log out</button>
+                    </form>
                 </div>
             </div>
 

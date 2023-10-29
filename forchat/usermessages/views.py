@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout
 from .models import Thread
 # Create your views here.
 
@@ -11,4 +12,9 @@ def messages(request):
     context = {
         'Threads': threads
     }
+
+    if request.method == 'POST':
+        logout(request)
+        return redirect('userauth')
+
     return render(request, "ForChat.html", context)
