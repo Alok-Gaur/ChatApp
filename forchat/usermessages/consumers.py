@@ -3,7 +3,8 @@ import json
 from channels.db import database_sync_to_async
 from channels.auth import get_user_model
 from .models import Thread, ChatMessage
-import datetime
+from django.db.models import Q
+from datetime import datetime
 # Here making Async Class
 
 User = get_user_model()
@@ -49,7 +50,7 @@ class AsyncClass(AsyncConsumer):
         if not thread_obj:
             print("Error:: Thread id is incorrect!")
 
-        await self.create_chat_message(thread_obj, sent_by_user, msg)
+        await self.create_chat_message(thread_obj, sent_by_user, msg, send_to_user)
 
         other_user_chat_room = f"user_chatroom_{send_to_id}"
         self_user = self.scope['user']  # this is current logged in user
@@ -104,7 +105,11 @@ class AsyncClass(AsyncConsumer):
         return obj
 
     @database_sync_to_async
-    def create_chat_message(self, thread, user, msg):
+    def create_chat_message(self, thread, user, msg, user2):
         ChatMessage.objects.create(
             thread=thread, user=user, message=msg)
-        Thread.updated()
+        obj = Thread.objects.filter(
+            Q(first_person=user) & Q(second_person=user2) | Q(
+                first_person=user2) & Q(second_person=user)
+        ).update(updated=datetime.now())
+        print('thread object in chat', obj)

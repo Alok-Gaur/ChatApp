@@ -59,11 +59,11 @@
                                 {% endif %}
                             </div>
                             <div class="contact-message">
-                                <p>{{ thread.chatmessage_thread.last.message }}</p>
+                                <p>{{ thread.chatmessage_thread.last.message |truncatechars:25 }}</p>
                             </div>
                         </div>
                         <div class="message-time">
-                            <p>{{ thread.chatmessage_thread.last.timestamp }}</p>
+                            <p>{{ thread.chatmessage_thread.last.timestamp|date:"P" }}</p>
                         </div>
                     </div>
                     {% endfor %}
@@ -96,9 +96,13 @@
                 <div class="msg-container">
                     {% for chat in thread.chatmessage_thread.all %}
                     {% if chat.user == user %}
-                    <div class="message right">{{chat.message}}</div>
+                    <div class="message right">{{chat.message}}
+                        <div class="msg-time">{{chat.timestamp|time:'P'}}</div>
+                    </div>
                     {% else %}
-                    <div class="message left">{{chat.message}}</div>
+                    <div class="message left">{{chat.message}}
+                        <div class="msg-time">{{chat.timestamp|time:'P'}}</div>
+                    </div>
                     {% endif %}
                     {% endfor %}
                 </div>

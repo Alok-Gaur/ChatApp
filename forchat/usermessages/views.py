@@ -8,7 +8,7 @@ from .models import Thread
 @login_required
 def messages(request):
     threads = Thread.objects.by_user(user=request.user).prefetch_related(
-        'chatmessage_thread')
+        'chatmessage_thread').order_by("updated")[::-1]
     context = {
         'Threads': threads
     }
