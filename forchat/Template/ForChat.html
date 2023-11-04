@@ -59,11 +59,11 @@
                                 {% endif %}
                             </div>
                             <div class="contact-message">
-                                <p>start chat!</p>
+                                <p>{{ thread.chatmessage_thread.last.message }}</p>
                             </div>
                         </div>
                         <div class="message-time">
-                            <p>03:40 pm</p>
+                            <p>{{ thread.chatmessage_thread.last.timestamp }}</p>
                         </div>
                     </div>
                     {% endfor %}

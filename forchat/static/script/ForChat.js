@@ -5,7 +5,14 @@ const USER_ID = $('#logged-in-user').val();
 let endpoint = "ws://" + location.host + location.pathname
 var sc = new WebSocket(endpoint);
 console.log(location.pathname);
-// console.log(message);
+
+
+messageContainer.animate({
+    scrollTop: $('.msg-container')[0].scrollHeight
+})
+
+
+
 sc.onopen = async (e) => {
     console.log("connection connected!", e);
     sentForm.on('submit', function (e) {

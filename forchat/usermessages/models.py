@@ -21,7 +21,7 @@ class Thread(models.Model):
     second_person = models.ForeignKey(
         User, on_delete=models.CASCADE, null=True, blank=True, related_name="thread_second_person")
 
-    updated = models.DateTimeField(auto_now=True)
+    updated = models.DateTimeField(User, auto_now=True)
     timestamp = models.DateTimeField(auto_now_add=True)
 
     objects= ThreadManager()
