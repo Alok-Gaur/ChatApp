@@ -1,7 +1,10 @@
 let messageContainer = $(".msg-container");
 let inputMessage = $('.input-message');
 const sentForm = $('#sent-form');
+const searchContact = $("#search");
 const USER_ID = $('#logged-in-user').val();
+
+
 let endpoint = "ws://" + location.host + location.pathname
 var sc = new WebSocket(endpoint);
 console.log(location.pathname);
@@ -15,6 +18,7 @@ messageContainer.animate({
 
 sc.onopen = async (e) => {
     console.log("connection connected!", e);
+    // This function sends messages to the backend
     sentForm.on('submit', function (e) {
         e.preventDefault();
         let message = inputMessage.val();
@@ -22,6 +26,7 @@ sc.onopen = async (e) => {
         let thread_id = get_active_thread_id();
 
         let data = {
+            'type': 'message',
             'message': message,
             'sent_by': USER_ID,
             'send_to': send_to,
@@ -31,15 +36,31 @@ sc.onopen = async (e) => {
         sc.send(data);
         $(this)[0].reset();
     })
+
+    // Here the function search the contact and made connection
+    searchContact.on("keyup", function (e) {
+        let srch = $('.search-box').val();
+        console.log(srch)
+        let data = {
+            'type': 'search',
+            'search': srch,
+        }
+        data = JSON.stringify(data);
+        sc.send(data);
+    })
 }
 
 sc.onmessage = async (e) => {
-    console.log('recieved Message!', e)
     let data = JSON.parse(e.data);
-    let message = data['message'];
-    let sent_by_id = data['sent_by'];
-    let thread_id = data['thread_id'];
-    newMessage(message, sent_by_id, thread_id);
+    if (data.identity === 'search-user') {
+        console.log("Search is working!")
+    }
+    else {
+        let message = data['message'];
+        let sent_by_id = data['sent_by'];
+        let thread_id = data['thread_id'];
+        newMessage(message, sent_by_id, thread_id);
+    }
 }
 
 sc.onerror = async (e) => {

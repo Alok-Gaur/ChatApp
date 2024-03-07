@@ -29,17 +29,25 @@
                 </div>
                 <div class="username">{{user.username}}</div>
                 <div class="logout-btn-container">
-                    <form action="" method="POST">
+                    <form action="" method="POST" id="contact-form" name="contact-form">
                         {% csrf_token %}
                         <button class="logout-btn" type="submit">Log out</button>
+                        <input type="hidden" value="logout" name="form_type">
                     </form>
                 </div>
+                <!-- <div>
+                    <p class="search-list" name="search-list"> {{ user.username }}</p>
+                </div> -->
             </div>
 
             <!--Contect and Search box Appear Here-->
             <div class="container-contact">
                 <div class="container-search">
-                    <input type="text" class="search-box" placeholder="Search">
+                    <form action="" method="post" value="search" id="search" name="search">
+                        {% csrf_token %}
+                        <input type="text" class="search-box" placeholder="Search" name="search-box">
+                        <input type="hidden" name="form_type" value="search">
+                    </form>
                 </div>
 
                 <!--Contact list is show in this container-->
@@ -111,7 +119,7 @@
             </div>
             {% endfor %}
             <div class="foot">
-                <form action="" class="txt-box" id="sent-form">
+                <form action="" class="txt-box" id="sent-form" , name="sent-form">
                     {% csrf_token %}
                     <input class="text-box input-message" type="text" placeholder="Message">
                     <button class="send-btn" type="submit"><img class="send-img" src="{% static 'demo_img/send.png' %}"
